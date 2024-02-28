@@ -61,7 +61,7 @@ To start using Laravel Email Sentry, you need to instantiate the EmailSentry cla
 
 ```php
 // import and use Facade
-use EmailSentry;
+use MailSentry;
 ```
 
 ```php
