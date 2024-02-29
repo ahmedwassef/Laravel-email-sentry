@@ -26,7 +26,6 @@ return new class extends Migration
             $table->longText('raw')->nullable();
             $table->string('attachments')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onCascade('delete');
             $table->timestamp('sent_at')->nullable();
             $table->timestamps();
         });
