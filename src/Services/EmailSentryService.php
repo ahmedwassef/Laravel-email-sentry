@@ -43,6 +43,11 @@ class EmailSentryService
         return $totalDeleted; // Return the total number of records deleted.
     }
 
+    public function find($id)
+    {
+        return $this->model->find($id); // Paginate the email sentry records and return the result.
+    }
+
     /**
      * Paginate email sentry records.
      *

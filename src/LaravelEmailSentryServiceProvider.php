@@ -32,6 +32,9 @@ class LaravelEmailSentryServiceProvider extends ServiceProvider
                 __DIR__.'/../database/migrations' => database_path('migrations'),
             ], 'email-sentry-migrations');
 
+            $this->publishes([
+                __DIR__.'/public' => public_path('vendor/email-sentry'),
+            ], ['email-sentry-assets', 'email-sentry-assets']);
 
             $this->publishes([
                 __DIR__.'/../config/email-sentry.php' => config_path('email-sentry.php'),
@@ -77,7 +80,7 @@ class LaravelEmailSentryServiceProvider extends ServiceProvider
     private function registerResources()
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'EmailSentry');
+        $this->loadViewsFrom(__DIR__.'/../src/resources/views', 'EmailSentry');
 
         $this->registerFacades();
         $this->registerRoutes();
@@ -92,9 +95,11 @@ class LaravelEmailSentryServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
+            'as' => 'email.sentry.',
             'domain' => config('email-sentry.domain', null),
             'namespace' => 'Ahmedwassef\LaravelEmailSentry\Http\Controllers',
             'prefix' => config('email-sentry.path'),
+            'middleware' => config('email-sentry.middleware'),
         ];
     }
 

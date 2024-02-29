@@ -67,14 +67,11 @@ class EmailSentOverseer extends Overseer
         if (is_null($addresses)) {
             return null;
         }
-
-        // Format addresses
-        return json_encode(collect($addresses)->flatMap(function ($address, $key) {
+        return collect($addresses)->flatMap(function ($address, $key) {
             if ($address instanceof Address) {
                 return [$address->getAddress() => $address->getName()];
             }
-
             return [$key => $address];
-        })->all(), JSON_PRETTY_PRINT);
+        })->all();
     }
 }

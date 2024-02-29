@@ -64,6 +64,11 @@ class EmailSentry
     }
 
 
+    public function find($id)
+    {
+        return $this->emailSentryService->find($id);
+    }
+
     /**
      * Retrieve email sentry records by the user ID.
      *

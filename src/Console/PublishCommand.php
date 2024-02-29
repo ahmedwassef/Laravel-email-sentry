@@ -33,6 +33,11 @@ class PublishCommand extends Command
         ]);
 
         $this->call('vendor:publish', [
+            '--tag' => 'email-sentry-assets',
+            '--force' => true,
+        ]);
+
+        $this->call('vendor:publish', [
             '--tag' => 'email-sentry-migrations',
             '--force' => true,
         ]);

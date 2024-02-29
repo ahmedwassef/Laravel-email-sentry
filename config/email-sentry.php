@@ -28,6 +28,10 @@ return [
 
     'path' => env('EMAIL_SENTRY_PATH', 'email-sentry'),
 
+
+
+    'domain' => env('EMAIL_SENTRY_DOMAIN', null),
+
     /*
 
     /*
@@ -42,6 +46,6 @@ return [
       |
     */
     'middleware' => [
-        'auth',
+
     ],
 ];
