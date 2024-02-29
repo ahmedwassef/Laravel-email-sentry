@@ -9,7 +9,7 @@ class IndexController extends Controller
     public function index()
     {
         // Paginate records
-        $emails = MailSentry::getEmailsPaginated(1);
+        $emails = MailSentry::getEmailsPaginated();
 
         return view('EmailSentry::index',['emails'=>$emails]);
 
