@@ -4,6 +4,7 @@
   <p align="center">
     An Awesome Email Monitoring and Management Package
     </p>
+    <img src="info/screenshoot.png">
  <hr/>
 </div>
 
@@ -28,18 +29,17 @@ To install *Laravel Email Sentry* using Composer, run the following command in y
 composer require ahmedwassef/laravel-email-sentry
 ```
 
-After installing  *Laravel Email Sentry* , you should also run the migrate command in order to create the table needed to store Data
-
-```bash
-php artisan migrate
-```
-
-
 ```bash
 # Publish the Configuration file
 php artisan EmailSentry:publish
 ```
 
+
+After installing  *Laravel Email Sentry* , you should also run the migrate command in order to create the table needed to store Data
+
+```bash
+php artisan migrate
+```
 
 ## Configuration
 You can configure Email Sentry by modifying the config/email-sentry.php configuration file. The configuration allows you to enable or disable email monitoring .
