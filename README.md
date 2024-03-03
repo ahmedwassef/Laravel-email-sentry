@@ -4,7 +4,7 @@
   <p align="center">
     An Awesome Email Monitoring and Management Package
     </p>
-    <img src="info/screenshoot.png">
+    <img src="https://raw.githubusercontent.com/ahmedwassef/Laravel-email-sentry/master/Info/screenshoot.png">
  <hr/>
 </div>
 
